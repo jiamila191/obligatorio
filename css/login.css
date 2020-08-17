@@ -7,12 +7,6 @@
         --icon_color:#6b6b6b;
         --backg_i: #bdecb6;
     }
-
-     * {
-        padding: 10px;
-        margin: 0px;
-        box-sizing: border-box;   
-    }
     
     a {
         text-decoration: none;
@@ -24,8 +18,7 @@
         color: var(--submit_hover);
     }
 
-     h1,
-    span {
+    #titulo {
         text-align: center;
         color: var(--submit_bg);
         letter-spacing: 3px;
@@ -38,6 +31,7 @@
         font-family: 'Roboto',
         sans-serif;
         background-color: var(--backg_i);
+        padding: 10px;
     }
 
     #pg {
