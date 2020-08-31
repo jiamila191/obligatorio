@@ -21,8 +21,63 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+          <div class="dropdown">
+            <button class="dropdown-toggle" id="usernav"></button>
+            <div class="dropdown-content">
+              <a href="index.html" id="close" class="nav-item nav-link active">Salir</a>
+            </div>
+          </div>
       </div>
     </nav>
+
+    <main role="main" class="pb-5"> <br><br><br>
+      <div class="container">
+        <div class="row">
+          <div class="col text-right">
+            <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+              <label class="btn btn-light active" id="sortAsc">
+                <input type="radio" name="options" autocomplete="off" checked>Menor
+              </label>
+              <label class="btn btn-light" id="sortDesc">
+                <input type="radio" name="options" autocomplete="off">Mayor
+              </label>
+              <label class="btn btn-light" id="sortPop">
+                <input type="radio" name="options" autocomplete="off">Más vendidos
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-end">
+          <div class="col-md-6"></div>
+          <div class="col-md-6 col-sm-12 mb-1 container">
+            <div class="row container p-0 m-0">
+              <div class="col">
+                <p class="font-weight-normal text-right my-2">Precio</p>
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+              </div>
+              <div class="col">
+                <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+              </div>
+              <div class="col-3 p-0">
+                <div class="btn-group" role="group">
+                  <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+                  <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="list-group" id="products">
+          </div>
+        </div>
+        <div class="row">
+          <a type="button" class="btn btn-light btn-lg btn-block" href="product-info.html">Ver un producto</a>
+        </div>
+      </div>
+    </main>
     <div class="container p-5">
       <div class="container">
         <div class="row">
@@ -38,11 +93,13 @@
         <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
         <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
       </div>
+
     </footer>
     <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/products.js"></script>
+    <script src="js/nav.js"></script>
   </body>
 </html>
