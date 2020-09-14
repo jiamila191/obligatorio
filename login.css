@@ -24,7 +24,7 @@
         color: var(--submit_hover);
     }
 
-     h1,
+    h1,
     span {
         text-align: center;
         color: var(--submit_bg);
