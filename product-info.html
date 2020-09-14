@@ -38,128 +38,124 @@
   </nav>
 
 
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-    <li class="nav-item">
-      <a class="nav-link" href="portada.html">Inicio</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="categories.html">Categorías</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="products.html">Productos</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="sell.html">Vender</a>
-    </li>
-    <li class="nav-item">
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="usuario" data-toggle="dropdown"
-          aria-haspopup="true" aria-expanded="false">
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="cart.html">Mi carrito</a>
-          <a class="dropdown-item" href="index.html" id="cerrar">Cerrar sesión</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="portada.html">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="categories.html">Categorías</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="products.html">Productos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="sell.html">Vender</a>
+      </li>
+      <li class="nav-item">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="usuario" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="cart.html">Mi carrito</a>
+            <a class="dropdown-item" href="index.html" id="cerrar">Cerrar sesión</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  </div>
+  </nav>
+
+
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción del producto</h2>
+        <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
+          seleccionado previamente, se visualizará el mismo: <strong>Chevrolet Onix Joy</strong>.</p>
+      </div>
+      <h3 id="productName" style="text-align:center;"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+
+        <dt>Precio</dt>
+        <dd>
+          <table>
+            <tr>
+              <td id="productCurrency"></td>
+              <td id="productCost"></td>
+            </tr>
+          </table>
+        </dd>
+
+        <dt>Vendidos</dt>
+        <dd>
+          <p id="productSoldCount"></p>
+        </dd>
+
+        <dt>Categoría</dt>
+        <dd>
+          <p id="productCategory"></p>
+        </dd>
+
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          </div>
+        </dd>
+      </dl>
+
+
+      <div class="text-center p-4">
+        <h2>Comentarios</h2>
+      </div>
+      <div class="container mt-5" id="comments-container">
+      </div>
+      <br>
+      <br>
+
+
+      <div>
+        <form>
+          <h3>Comentar</h3>
+          <p class="lead"> Puntuación <select id="puntaje">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select> </p>
+          <p class="lead"> Escribe un comentario <br> <textarea id="comentarion"></textarea> </p>
+          <input type="button" value="Publicar" onclick="comentar()">
+
+        </form>
+      </div>
+
+      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Volver</a>
+
+
+
+      <div id="spinner-wrapper">
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       </div>
-    </li>
-  </ul>
-</div>
-</div>
-</nav>
-
-
-<main role="main">
-  <div class="container mt-5">
-    <div class="text-center p-4">
-      <h2>Descripción del producto</h2>
-      <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
-      <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
-        seleccionado previamente, se visualizará el mismo: <strong>Chevrolet Onix Joy</strong>.</p>
-    </div>
-<h3 id="productName" style="text-align:center;"></h3>
-<hr class="my-3">
-<dl>
-  <dt>Descripción</dt>
-  <dd>
-    <p id="productDescription"></p>
-  </dd>
-
-  <dt>Precio</dt>
-  <dd>
-    <table>
-      <tr>
-        <td id="productCurrency"></td>
-        <td id="productCost"></td>
-      </tr>
-    </table>
-  </dd>
-
-  <dt>Vendidos</dt>
-  <dd>
-    <p id="productSoldCount"></p>
-  </dd>
-
-  <dt>Categoría</dt>
-  <dd>
-    <p id="productCategory"></p>
-  </dd>
-
-  <dt>Imágenes ilustrativas</dt>
-  <dd>
-    <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
-    </div>
-  </dd>
-</dl>
-
-
-  <div class="text-center p-4">
-    <h2>Comentarios</h2>
-  </div>
-  <div class="container mt-5" id="comments-container">
-  </div>
-  <br>
-  <br>
-
-        
-<div class="list-group" id="comentariosListados"></div>
-<form>
-  <h3>Comentar</h3>
-  <p class="lead"> Puntuación <select id="puntaje">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select> </p>
-  <p class="lead"> Escribe un comentario <br> <textarea id="comentarion"></textarea> </p>
-  <input type="button" value="Publicar">
-
-</form>
-</div>
-
-
-
-
-
-<a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Volver</a>
-
-  
-
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/product-info.js"></script>
-  <script src="js/nav.js"></script>
-  <script src="js/comentarios.js"></script>
+      <script src="js/jquery-3.4.1.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/init.js"></script>
+      <script src="js/product-info.js"></script>
+      <script src="js/nav.js"></script>
+      <script src="js/comentarios.js"></script>
 </body>
 
 </html>
