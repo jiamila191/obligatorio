@@ -20,3 +20,8 @@ form.addEventListener('submit',function(event){
    localStorage.setItem('user',JSON.stringify(user));
    location.href = 'home.html';
 });
+ 
+document.addEventListener("DOMContentLoaded", function (e) {
+    localStorage.removeItem("user");
+})
+
