@@ -1,0 +1,86 @@
+.card2 {
+    background: rgb(243, 243, 243);
+    color: rgb(0, 0, 0);
+    width: 400px;
+    padding: 3rem;
+    height: 500px;
+	position: relative;
+    
+    margin-top: 50px;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+
+}
+
+.mrow {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+#mcd {
+    margin-left: 20px;
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    
+}
+#pyp {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    
+}
+#vsa {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    
+}
+
+.main span:hover {
+    text-decoration: underline;
+    cursor: pointer
+}
+
+.mrow img:hover {
+    border-bottom: 1px solid #fff;
+    cursor: pointer
+}
+
+.btn-primary {
+    border: none;
+    border-radius: 30px
+}
+
+
+.form-control:focus+.form-control-placeholder,
+.form-control:valid+.form-control-placeholder {
+    font-size: 75%;
+    transform: translate3d(0, -100%, 0);
+    opacity: 1;
+    top: 10px
+}
+
+.form-control {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff !important;
+    border-radius: 0;
+    outline: 0
+}
+
+.form-control:focus,
+.form-control:after {
+    outline-width: 0;
+    border-bottom: 1px solid #fff !important;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    color: #dae0e5;
+    letter-spacing: 1px
+}
