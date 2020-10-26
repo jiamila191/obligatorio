@@ -3,7 +3,7 @@
 }
 
 .card {
-    margin: auto;
+    margin-right: 50px;
     max-width: 950px;
     margin-top: 50px;
     width: 90%;
@@ -16,25 +16,11 @@
 
 .cart {
     background-color:rgb(247, 247, 247);
-    padding: 4vh 5vh;
     border-bottom-left-radius: 1rem;
     border-top-left-radius: 1rem
 }
 
-@media(max-width:767px) {
-    .cart {
-        padding: 4vh;
-        border-bottom-left-radius: unset;
-        border-top-right-radius: 1rem
-    }
-}
 
-.summary {
-    background-color: #ddd;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    padding: 4vh;
-}
 
 #totalCost{
 color: green;

@@ -57,95 +57,67 @@
           <a class="dropdown-item" id="close" href="index.html">Cerrar sesión</a>
         </div>
       </div>
-
     </div>
   </nav>
 
 
 
-  <div class="card">
-    <div class="row">
-      <div class="col-md-8 cart">
-        <div class="title">
-          <div class="row">
-            <div class="col">
-              <h4><b>Productos:</b></h4>
-            </div>
-            <div><span class="badge badge-danger" id="articulos">1</span>
-            </div>
-          </div>
-          <div>
-            <div id="listaProduct" class="list-group-item d-flex lh-condensed item-producto">
-              <div class="col-md-6">
-                <img id="imagen" width="400" src="img/tree1.jpg">
-              </div>
-              <div class="col-md-6">
-                <div class="col-md-12 mb-3">
-                  <h5 class="my-0 mb-3" id="name"></h5>
-                  <p class="text-muted" id="unitCost"></p>
-                </div>
-                <div class="col-md-6">
-                  <label for="count">Cantidad:</label>
-                  <input type="number" min="0" class="form-control" id="count">
-                </div>
+  <div class="card m-r-auto" style="width: 18rem; float: right;">
+    <div class="card-header bg-dark text-white text-uppercase">
+      Resumen de Compra:
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item d-flex justify-content-between algin-items-center ">
+        <div>Subtotal</div>
+        <span id="subtotalspan"></span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between algin-items-center">
+        <div>Envío</div>
+        <span id="enviospan"></span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between algin-items-center">
+        <div>Total</div>
+        <span id="totalspan"></span>
+      </li>
+    </ul>
 
-                <div>   </div>
-                <div class="dropdown"></div>
-                <button type="button" class="btn btn-light dropdown-toggle" type="button" id="dropdownMenu2"
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Tipo de envío
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <div>
-                    <label>seleccione un tipo de envio</label>
-                  </div>
-                  <div class="custom-control custom-radio">
-                    <input id="premium" name="publicationType" type="radio" class="custom-control-input">
-                    <label class="custom-control-label" for="premium">Premium (2-5 dias)</label>
-                  </div>
-                  <div class="custom-control custom-radio">
-                    <input id="express" name="publicationType" type="radio" class="custom-control-input" required="">
-                    <label class="custom-control-label" for="express">Express (5-8 días) </label>
-                  </div>
-                  <div class="custom-control custom-radio">
-                    <input id="estandar" name="publicationType" type="radio" class="custom-control-input" required="">
-                    <label class="custom-control-label" for="estandar">Estándar (12 a 15 días) </label>
-                  </div>
-                </div>
-              </div>
+    <div>
+      <div class="dropdown"></div>
+      <button type="button" class="btn btn-light dropdown-toggle" id="dropdownMenu2" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Tipo de envío
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <div>
+          <label>seleccione un tipo de envío</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="premium" name="publicationType" type="radio" class="custom-control-input" required="">
+          <label class="custom-control-label" for="premium">Premium (2-5 dias)</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="express" name="publicationType" type="radio" class="custom-control-input" required="">
+          <label class="custom-control-label" for="express">Express (5-8 días) </label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="estandar" name="publicationType" type="radio" class="custom-control-input" required="">
+          <label class="custom-control-label" for="estandar">Estándar (12 a 15 días) </label>
+        </div>
+      </div>
+    </div>
+    <hr> <a href="#openModal" class="btn btn-out btn-primary btn-square btn-main"> Comprar </a>
+    <a href="products.html" class="btn btn-out btn-success btn-square btn-main mt-2">Ver más productos</a>
+  </div>
+
+  <div class=" cart">
+    <div class="title">
+      <div class="row">
+        <div class="container">
+          <div id="tablaProductos" style="float: left;">
+            <div>
             </div>
           </div>
         </div>
-      </div>
-
-
-
-      <div class="col-md-4 order-md-2 summary">
-
-        <dl class="dlist-align">
-          <dt>Resumen de la compra</dt>
-        </dl>
-        <dl class="dlist-align">
-          <dt>Subtotal:</dt>
-          <dd class="text-right text-danger ml-3">
-            <span class="text-muted" id="subtotal"></span>
-          </dd>
-        </dl>
-        <dl class="dlist-align">
-          <dt>Envío:</dt>
-          <dd class="text-right text-danger ml-3">
-            <span class="text-muted" id="envio"></span></h6>
-          </dd>
-        </dl>
-        <dl class="dlist-align">
-          <dt>Total:</dt>
-          <dd class="text-right ">
-            <strong id="totalCost"></strong>
-          </dd>
-        </dl>
-        <hr> <a href="#openModal" class="btn btn-out btn-primary btn-square btn-main"> Comprar </a>
-        <a href="products.html" class="btn btn-out btn-success btn-square btn-main mt-2">Ver mas
-          productos</a>
       </div>
     </div>
   </div>
@@ -153,49 +125,171 @@
 
 
 
+  <!--modal-->
   <div id="openModal" class="modalDialog">
-    <div>
-      <a href="#close" title="Close" class="close">x</a>
-      <div class="container-fluid">
-        <div class="row justify-content-center">
-          <div class="card2 p-3">
-            <div class="row main">
-              <div class="row justify-content-center mrow">
-                <h3>Seleccione metodo de pago</h3>
-                <div class="col-12"> <img id="mcd" src="https://img.icons8.com/color/48/000000/mastercard-logo.png">
-                  <img id="vsa" src="https://img.icons8.com/color/48/000000/visa.png">
-                  <img id="pyp" src="https://img.icons8.com/color/48/000000/paypal.png">
+    <a href="#close" title="Close" class="close">x</a>
+    <div class="container-fluid px-0" id="bg-div">
+      <div class="row justify-content-center">
+        <div class="col-lg-9 col-12">
+          <div class="card card0">
+            <div class="d-flex" id="wrapper">
+              <!-- Sidebar -->
+              <div class="bg-light border-right" id="sidebar-wrapper">
+                <div class="list-group list-group-flush"> <a data-toggle="tab" href="#menu1" id="tab1"
+                    class="tabs list-group-item bg-light">
+                    <div class="list-div my-2">
+                      <div class="fa fa-home"></div> &nbsp;&nbsp; Direccion de envío
+                    </div>
+                  </a> <a data-toggle="tab" href="#menu2" id="tab2" class="tabs list-group-item active1">
+                    <div class="list-div my-2">
+                      <div class="fa fa-credit-card"></div> &nbsp;&nbsp; Método de pago
+                    </div>
+                  </a>
                 </div>
-              </div>
-              <form class="form-card">
-                <div class="row">
-                  <div class="col-12">
-                    <div class="form-group"> <input type="text" placeholder="Numero de tarjeta" class="form-control p-0"
-                        id="number" required><label class="form-control-placeholder p-0" for="number"></label>
+              </div> <!-- Page Content -->
+              <div id="page-content-wrapper">
 
+                <div class="row justify-content-center">
+                  <div class="text-center" id="test"></div>
+                </div>
+                <div class="tab-content">
+                  <div id="menu1" class="tab-pane in active">
+                    <div class="row justify-content-center">
+                      <div class="col-11">
+                        <div class="form-card">
+                          <h3 class="mt-0 mb-4 text-center">Dirección de envío</h3>
+                          <form class="needs-validation" novalidate="">
+                            <div class="row">
+                              <div class="col-12">
+                                <label for="validationCustom04"> Departamento *</label>
+                                <div class="input-group">
+                                  <select class="custom-select" id="validationCustom04" required="">
+                                    <option selected="" disabled="" value=""></option>
+                                    <option>MONTEVIDEO</option>
+                                    <option>ARTIGAS</option>
+                                    <option>CANELONES</option>
+                                    <option>CERRO LARGO</option>
+                                    <option>COLONIA</option>
+                                    <option>DURAZNO</option>
+                                    <option>FLORES</option>
+                                    <option>FLORIDA</option>
+                                    <option>LAVALLEJA</option>
+                                    <option>MALDONADO</option>
+                                    <option>PAYSANDU</option>
+                                    <option>RIO NEGRO</option>
+                                    <option>RIVERA</option>
+                                    <option>ROCHA</option>
+                                    <option>SALTO</option>
+                                    <option>SAN JOSE</option>
+                                    <option>SORIANO</option>
+                                    <option>TACUAREMBO</option>
+                                    <option>TREINTA Y TWRES</option>
+                                  </select>
+                                  <div class="invalid-feedback">
+                                    Seleccione un departamento.
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="col-6">
+                                <label for="validationCustom04">Ciudad *</label>
+                                <input type="text" class="form-control" id="validationCustom05" required="">
+                                <div class="invalid-feedback">
+                                  Debe completar este campo.
+                                </div>
+                              </div>
+
+                              <div class="col-6">
+                                <label for="validationCustom05">Calle
+                                  *</label>
+                                <input type="text" class="form-control" id="validationCustom05" required="">
+
+                                <div class="invalid-feedback">
+                                  Debe completar este campo.
+                                </div>
+                              </div>
+
+                              <div class="col-6">
+                                <label for="validationCustom04">Número*</label>
+                                <input type="text" class="form-control" id="validationCustom05" required="">
+                                <div class="invalid-feedback">
+                                  Debe completar este campo.
+                                </div>
+                              </div>
+
+                              <div class="col-md-12"> <button class="btn btn-primary" type="submit">Siguiente</button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <div class="form-group"> <input type="text" placeholder="Nombre" class="form-control p-0" id="name"
-                        required><label class="form-control-placeholder p-0" for="name"></label> </div>
+
+                  <div id="menu2" class="tab-pane">
+                    <div class="row justify-content-center">
+                      <div class="col-11">
+                        <div class="form-card">
+                          <h3 class="mt-0 mb-4 text-center">Seleccione un metodo de pago</h3>
+                          <div class="col-12 row justify-content-center mrow"> <img id="mcd"
+                              src="https://img.icons8.com/color/48/000000/mastercard-logo.png">
+                            <img id="vsa" src="https://img.icons8.com/color/48/000000/visa.png">
+                            <img id="pyp" src="https://img.icons8.com/color/48/000000/paypal.png">
+                          </div>
+                          <form class="needs-validation" novalidate="">
+                            <div class="row">
+                              <div class="col-12">
+                                <label for="validationCustom07">Nombre*</label>
+                                <input type="text" name="name" id="name" placeholder="Propietario de la tarjeta"
+                                  class="form-control" required="">
+                                <div class="invalid-feedback">
+                                  Debe completar este campo.
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-12">
+                                <label for="validationCustom06">Numero de tarjeta*</label>
+                                <input type="text" class="form-control" id="validationCustom06"
+                                  placeholder="0000 0000 0000 0000" minlength="19" maxlength="19" required="">
+                                <div class="invalid-feedback">
+                                  Debe completar este campo.
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-4">
+                                <label for="validationCustom07">Valido hasta*</label>
+                                <input type="text" name="exp" class="form-control" id="validationCustom07" required=""
+                                  placeholder="MM/YY" minlength="5" maxlength="5">
+                                <div class="invalid-feedback">
+                                  Debe completar este campo.
+                                </div>
+                              </div>
+                              <div class="col-6">
+                                <label for="validationCustom07">CVV *</label>
+                                <input type="text" name="cvcpwd" placeholder="●●●" minlength="3" maxlength="3"
+                                  class="form-control" id="validationCustom07" required="">
+                                <div class="invalid-feedback">
+                                  Debe completar este campo.
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col-md-12"> <button class="btn btn-primary" type="submit">Pagar </button>
+                              </div>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
                   </div>
+
                 </div>
-                <div class="row">
-                  <div class="col-sm-4 col-12">
-                    <div class="form-group"> <input type="text" placeholder="Valido hasta" class="form-control p-0"
-                        id="expdate" required><label class="form-control-placeholder p-0" for="expdate"></label> </div>
-                  </div>
-                  <div class="col-sm-4 col-12">
-                    <div class="form-group"> <input type="password" placeholder="CVV" class="form-control p-0"
-                        id="passw" required><label class="form-control-placeholder p-0" for="passw"></label> </div>
-                  </div>
-                </div>
-                <div class="row mb-2">
-                  <div class="col-sm-12"> <button type="button" class="btn btn-primary btn-block">Pagar</button> </div>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
@@ -204,12 +298,25 @@
   </div>
 
 
+  <script>
+    (function () {
+      'use strict';
+      window.addEventListener('load', function () {
+        var forms = document.getElementsByClassName('needs-validation');
+        var validation = Array.prototype.filter.call(forms, function (form) {
+          form.addEventListener('submit', function (event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
 
-
-
-
-
-  <div id="spinner-wrapper">
+  <div id="spinner-wrapper" style="display: none;">
     <div class="lds-ring">
       <div> </div>
       <div></div>
@@ -222,9 +329,6 @@
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
-
-
-
 
 </body>
 
