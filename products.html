@@ -13,6 +13,8 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/grid.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -36,24 +38,20 @@
   </nav>
 
   <main role="main" class="pb-5"> <br><br><br>
-    <div class="container">
-      <div class="row">
-        <div class="col text-right">
-          <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-            <label class="btn btn-light active" id="sortAsc">
-              <input type="radio" name="options" autocomplete="off" checked>Menor
-            </label>
-            <label class="btn btn-light" id="sortDesc">
-              <input type="radio" name="options" autocomplete="off">Mayor
-            </label>
-            <label class="btn btn-light" id="sortPop">
-              <input type="radio" name="options" autocomplete="off">Más vendidos
-            </label>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-end">
-        <div class="col-md-6"></div>
+<div class="container">
+  <div class="row">
+      <h4>Filtrar por:</h4>
+    <div class="col text-right">
+      <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+        <label class="btn btn-light active" id="sortAsc">
+          <input type="radio" name="options" autocomplete="off" checked="">Menor
+        </label>
+        <label class="btn btn-light" id="sortDesc">
+          <input type="radio" name="options" autocomplete="off">Mayor
+        </label>
+        <label class="btn btn-light" id="sortPop">
+          <input type="radio" name="options" autocomplete="off">Más vendidos
+        </label>
         <div class="col-md-6 col-sm-12 mb-1 container">
           <div class="row container p-0 m-0">
             <div class="col">
@@ -74,22 +72,29 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+
+
+  <div class="row justify-content-end ">
+
+  </div>
+</div>
+
+    <br>
+    <hr>
+
       <div class="row">
-        <div class="list-group" id="products">
+        <div class="d-flex justify-content-center flex-wrap" id="products">
         </div>
       </div>
+      <br>
+      <br>
       <div class="row"></div>
       <a type="button" class="btn btn-light btn-lg btn-block" href="product-info.html">Ver un producto</a>
     </div>
     </div>
   </main>
-  <div class="container p-5">
-    <div class="container">
-      <div class="row">
-        <div class="list-group" id="prod-list-container"></div>
-      </div>
-    </div>
-  </div>
   <footer class="text-muted bg-light">
     <div class="container">
       <p class="float-right">
@@ -116,3 +121,4 @@
 </body>
 
 </html>
+
