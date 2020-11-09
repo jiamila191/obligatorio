@@ -4,32 +4,8 @@
 document.addEventListener("DOMContentLoaded", function (e) {
 
 });
-var productsArray = [];
 
-function showProductsList(array) {
-    let htmlContentToAppend = "";
-    for (let i = 0; i < array.length; i++) {
-        let product = array[i];
-        
-        htmlContentToAppend += `
-        <div class="list-group-item list-group-item-action">
-            <div class="row">
-                <div class="col-3">
-                    <img src="` + product.imgSrc + `" class="img-thumbnail">
-                </div>
-                <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">`+ product.name + `</h4>
-                        <small class="font-muted">` + product.currency + " $" + product.cost + `<br> `+ product.soldCount + ` artículos vendidos </small>                    
-                     </div>
-                     ${product.description}
-                 </div>
-             </div>
-         </div>
-        `
-        document.getElementById("prod-list-container").innerHTML = htmlContentToAppend;
-    }
-}
+
 
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCTS_URL).then(function (resultObj) {
@@ -83,26 +59,30 @@ function showProductsList() {
         let product = currentProductArray[i];
         if (((minCount == undefined) || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))) {
-            htmlContentToAppend += `
-            <a href="product-info.html" class="list-group-item list-group-item-action">
-                <div class="row">
-                    <div class="col-3">
-                        <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h4 class="mb-1">`+ product.name + `</h4>
-                            <small class="text-muted">` + product.soldCount + ` venididos</small>
-                        </div>
-                        <div class="d-flex w-100 justify-content-between" >
-                        <p class="mb-1">` + product.description + `</p>
-                        <p> ` + product.currency + `` + product.cost + `
-                        </p>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            `
+            htmlContentToAppend += `  
+                            <a href="product-info.html" class="list-group-item list-group-item-action col-md-3 mx-1 my-2">
+                            <div class="row px-1">
+                                <div>
+                                <img src="`+ product.imgSrc + `" class="card-img img-fluid" width="96" height="350" alt="">
+                                </div>
+                            </div>
+                            <div class="row my-1 px-2">
+                                <div class="bg-light text-center">
+                                <h4 class="mb-1">` + product.name + `</h4>
+                                <div class="mb-2">
+                                    <p class="text-muted"> `+ product.description + ` </p>
+                                </div>
+
+                                <h3 class="mb-0 font-weight-semibold">`+ product.currency + `` + product.cost + `</h3>
+                                <div class="text-muted mb-3">
+                                    <small class="text-muted">` + product.soldCount + ` venididos</small>
+                                </div>
+                                <button type="button" class="btn bg-cart" href="product-info.html"> Ver producto</button>
+                                </div>
+                            </div>
+                            </a>    
+                        `
+
         }
     }
 
@@ -136,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
         showProductsList();
     });
-   
+
     document.getElementById("sortAsc").addEventListener("click", function () {
         sortAndShowProducts(ORDER_MENOR);
     });
@@ -153,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         document.getElementById("rangeFilterCountMax").value = "";
         maxCount = undefined;
         minCount = undefined;
-       
+
 
         showProductsList();
     });
